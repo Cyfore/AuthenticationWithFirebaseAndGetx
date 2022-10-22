@@ -2,13 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/image/image_constants.dart';
 import '../../../widgets/text/big_text.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key, required this.w, required this.h});
+  const LoginButton(this.asset, {super.key, required this.w, required this.h, required this.text});
   final double w;
   final double h;
+  final String asset;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +19,7 @@ class LoginButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         image: DecorationImage(
           image: AssetImage(
-            ImageConstants.instance.garouMonster,
+            asset,
           ),
           fit: BoxFit.cover,
         ),
@@ -35,8 +36,8 @@ class LoginButton extends StatelessWidget {
         child: Center(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-            child: const BigText(
-              'Sign in',
+            child: BigText(
+              text,
               color: Colors.white,
               size: 36,
             ),

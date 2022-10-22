@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/app/app_colors.dart';
 import '../../../widgets/text/big_text.dart';
 import '../../../widgets/text/small_text.dart';
 import 'login_textfield_button.dart';
@@ -20,27 +19,16 @@ class LoginAndText extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const BigText(
-            'Hello',
-            color: Colors.black,
-          ),
-          SmallText(
-            text: 'Sign into your account',
-            color: MyColors.smallTextColor,
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          const LoginTextField(),
+          const BigText('Hello', color: Colors.black),
+          const SmallText(text: 'Sign into your account'),
+          const SizedBox(height: 50),
+          const LoginTextField(hintText: 'Email', icon: Icons.email),
           const SizedBox(height: 20),
-          const LoginTextField(),
+          const LoginTextField(hintText: 'Password', icon: Icons.password),
           const SizedBox(height: 20),
           Container(
             margin: const EdgeInsets.only(left: 220),
-            child: SmallText(
-              text: 'Forgot your account? ',
-              color: MyColors.smallTextColor,
-            ),
+            child: const SmallText(text: 'Forgot your account? '),
           ),
         ],
       ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:login_app_with_firebase/widgets/text/small_text.dart';
 
 import '../../core/constants/image/image_constants.dart';
-import 'utils/colors.dart';
-import 'widgets/login_and_text.dart';
 import 'widgets/login_button.dart';
-import 'widgets/login_image.dart';
+import 'widgets/signup_image.dart';
+import 'widgets/signup_textfield.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -14,43 +14,54 @@ class SignUpPage extends StatelessWidget {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Column(
-        children: [
-          LoginImage(
-            ImageConstants.instance.midoriya,
-            h: h,
-            w: w,
-          ),
-          LoginAndText(w: w),
-          const SizedBox(height: 70),
-          LoginButton(
-            h: h,
-            w: w,
-          ),
-          const SizedBox(height: 70),
-          Container(),
-          SizedBox(height: w * 0.15),
-          RichText(
-            text: TextSpan(
-              text: "Don't have an account?",
-              style: TextStyle(
-                color: MyLoginColors.smallTextColor,
-                fontSize: 20,
-              ),
-              children: const [
-                TextSpan(
-                  text: "  Create",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SignUpImage(
+              ImageConstants.instance.saitama,
+              h: h,
+              w: w,
             ),
-          )
-        ],
+            SignUpTextfield(
+              w: w,
+            ),
+            const SizedBox(height: 70),
+            LoginButton(
+              ImageConstants.instance.deadPlanetSpecular,
+              h: h,
+              w: w,
+              text: 'Sign Up',
+            ),
+            const SizedBox(height: 70),
+            const SmallText(
+              text: 'Sign up using on the following method',
+            ),
+            Wrap(
+              children: List<Widget>.generate(3, (index) {
+                return Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CircleAvatar(
+                    radius: 33,
+                    backgroundColor: Colors.grey[400],
+                    child: CircleAvatar(
+                      radius: 27,
+                      backgroundImage: AssetImage(ImageList.images[index]),
+                    ),
+                  ),
+                );
+              }),
+            )
+          ],
+        ),
       ),
     );
   }
+}
+
+class ImageList {
+  static List images = [
+    ImageConstants.instance.facebook,
+    ImageConstants.instance.twitter,
+    ImageConstants.instance.google,
+  ];
 }

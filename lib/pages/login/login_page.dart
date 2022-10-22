@@ -43,20 +43,21 @@ class _LoginPageState extends State<LoginPage> {
             LoginAndText(w: w),
             const SizedBox(height: 70),
             LoginButton(
+              ImageConstants.instance.garouMonster,
               h: h,
               w: w,
+              text: 'Sign In',
             ),
             const SizedBox(height: 70),
-            Container(),
             SizedBox(height: w * 0.15),
             RichText(
-              text: TextSpan(
+              text: const TextSpan(
                 text: "Don't have an account?",
                 style: TextStyle(
                   color: MyLoginColors.smallTextColor,
                   fontSize: 20,
                 ),
-                children: const [
+                children: [
                   TextSpan(
                     text: "  Create",
                     style: TextStyle(

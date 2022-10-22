@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 
+import '../../core/constants/app/app_colors.dart';
+
 class SmallText extends StatelessWidget {
   const SmallText({
     super.key,
     required this.text,
-    required this.color,
+    this.color = MyColors.smallTextColor,
     this.size = 20,
   });
   final String text;

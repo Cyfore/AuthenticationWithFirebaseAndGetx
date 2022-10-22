@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 class MyLoginColors {
-  static Color smallTextColor = Colors.grey[500] as Color;
+  static const Color smallTextColor = Color.fromARGB(255, 157, 156, 156);
 }

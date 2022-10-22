@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 class LoginTextField extends StatelessWidget {
   const LoginTextField({
     Key? key,
+    required this.hintText,
+    required this.icon,
   }) : super(key: key);
-
+  final String hintText;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(
-          30,
-        ),
+        borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
             blurRadius: 10,
@@ -24,6 +25,11 @@ class LoginTextField extends StatelessWidget {
       ),
       child: TextField(
         decoration: InputDecoration(
+          hintText: hintText,
+          prefixIcon: Icon(
+            icon,
+            color: Colors.black,
+          ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
             borderSide: const BorderSide(
@@ -39,9 +45,7 @@ class LoginTextField extends StatelessWidget {
             ),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(
-              30,
-            ),
+            borderRadius: BorderRadius.circular(30),
           ),
         ),
       ),
