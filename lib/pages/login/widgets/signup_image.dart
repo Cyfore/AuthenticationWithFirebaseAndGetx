@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:login_app_with_firebase/core/constants/image/image_constants.dart';
 
 class SignUpImage extends StatelessWidget {
@@ -25,6 +26,27 @@ class SignUpImage extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage(asset),
                 fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          left: 20,
+          top: 20,
+          child: InkWell(
+            onTap: () => Get.back(),
+            child: IgnorePointer(
+              child: SizedBox(
+                width: 70,
+                height: 70,
+                child: IconButton(
+                  onPressed: () => Get.back(),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                    size: 70,
+                  ),
+                ),
               ),
             ),
           ),

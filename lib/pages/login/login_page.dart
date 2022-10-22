@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:login_app_with_firebase/core/constants/image/image_constants.dart';
+import 'package:login_app_with_firebase/pages/login/signup_page.dart';
 
 import 'utils/colors.dart';
 import 'widgets/login_and_text.dart';
@@ -51,20 +54,21 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 70),
             SizedBox(height: w * 0.15),
             RichText(
-              text: const TextSpan(
+              text: TextSpan(
                 text: "Don't have an account?",
-                style: TextStyle(
+                style: const TextStyle(
                   color: MyLoginColors.smallTextColor,
                   fontSize: 20,
                 ),
                 children: [
                   TextSpan(
                     text: "  Create",
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
+                    recognizer: TapGestureRecognizer()..onTap = () => Get.to(() => const SignUpPage()),
                   ),
                 ],
               ),
