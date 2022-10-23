@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "364951727912",
+    "project_id": "fir-2-3a7b7",
+    "storage_bucket": "fir-2-3a7b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364951727912:android:50f6f459483056671d2a1d",
+        "android_client_info": {
+          "package_name": "com.example.login_app_with_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364951727912-bv7n235iajhrfsjvje994augi5ure337.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXUZeN3_a6SxOIT-Y_3Td_J7gkUegUIYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364951727912-bv7n235iajhrfsjvje994augi5ure337.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364951727912:android:890877b64f8cbc151d2a1d",
+        "android_client_info": {
+          "package_name": "com.example.omurtorpusu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364951727912-clkk65otjuje943hp7d8tbgp53dme4bh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.omurtorpusu",
+            "certificate_hash": "bef62dde3c7e5e0484e8a679570bdc07f13d0ea4"
+          }
+        },
+        {
+          "client_id": "364951727912-bv7n235iajhrfsjvje994augi5ure337.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXUZeN3_a6SxOIT-Y_3Td_J7gkUegUIYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364951727912-bv7n235iajhrfsjvje994augi5ure337.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

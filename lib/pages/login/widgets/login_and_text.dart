@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app_with_firebase/controllers/auth_controller.dart';
 
 import '../../../widgets/text/big_text.dart';
 import '../../../widgets/text/small_text.dart';
@@ -22,9 +23,20 @@ class LoginAndText extends StatelessWidget {
           const BigText('Hello', color: Colors.black),
           const SmallText(text: 'Sign into your account'),
           const SizedBox(height: 50),
-          const LoginTextField(hintText: 'Email', icon: Icons.email),
+          LoginTextField(
+            keyType: TextInputType.emailAddress,
+            hintText: 'Email',
+            icon: Icons.email,
+            controller: AuthController.instance.email,
+          ),
           const SizedBox(height: 20),
-          const LoginTextField(hintText: 'Password', icon: Icons.password),
+          LoginTextField(
+            hide: true,
+            keyType: TextInputType.visiblePassword,
+            hintText: 'Password',
+            icon: Icons.password,
+            controller: AuthController.instance.password,
+          ),
           const SizedBox(height: 20),
           Container(
             margin: const EdgeInsets.only(left: 220),

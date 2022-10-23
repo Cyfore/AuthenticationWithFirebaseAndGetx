@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app_with_firebase/controllers/auth_controller.dart';
 import 'package:login_app_with_firebase/widgets/text/big_text.dart';
 
 import '../../core/constants/image/image_constants.dart';
@@ -6,8 +7,8 @@ import '../login/widgets/login_button.dart';
 import '../login/widgets/signup_image.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+  const HomePage({super.key, required this.email});
+  final String email;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -27,11 +28,17 @@ class HomePage extends StatelessWidget {
               color: Colors.black,
               size: 40,
             ),
+            BigText(
+              email,
+              color: Colors.black,
+              size: 20,
+            ),
             LoginButton(
               ImageConstants.instance.gojoSenpai,
               h: h,
               w: w,
               text: 'Sign Out',
+              authOnTap: AuthController.instance.signOut,
             ),
           ],
         ),

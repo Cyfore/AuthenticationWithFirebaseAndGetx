@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app_with_firebase/widgets/text/small_text.dart';
 
+import '../../controllers/auth_controller.dart';
 import '../../core/constants/image/image_constants.dart';
 import 'widgets/login_button.dart';
 import 'widgets/signup_image.dart';
@@ -30,7 +31,7 @@ class SignUpPage extends StatelessWidget {
               ImageConstants.instance.deadPlanetSpecular,
               h: h,
               w: w,
-              text: 'Sign Up',
+              text: 'Sign Up', authOnTap: AuthController.instance.signUp,
             ),
             const SizedBox(height: 70),
             const SmallText(

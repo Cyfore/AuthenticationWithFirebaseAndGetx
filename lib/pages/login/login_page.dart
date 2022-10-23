@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:login_app_with_firebase/core/constants/image/image_constants.dart';
 import 'package:login_app_with_firebase/pages/login/signup_page.dart';
 
+import '../../controllers/auth_controller.dart';
 import 'utils/colors.dart';
 import 'widgets/login_and_text.dart';
 import 'widgets/login_button.dart';
@@ -50,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               h: h,
               w: w,
               text: 'Sign In',
+              authOnTap: AuthController.instance.signIn,
             ),
             const SizedBox(height: 70),
             SizedBox(height: w * 0.15),

@@ -5,9 +5,15 @@ class LoginTextField extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.icon,
+    required this.controller,
+    required this.keyType,
+    this.hide = false,
   }) : super(key: key);
   final String hintText;
+  final TextInputType keyType;
   final IconData icon;
+  final TextEditingController controller;
+  final bool hide;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,6 +30,9 @@ class LoginTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
+        controller: controller,
+        obscureText: hide,
+        keyboardType: keyType,
         decoration: InputDecoration(
           hintText: hintText,
           prefixIcon: Icon(
