@@ -4,7 +4,7 @@ import 'package:login_app_with_firebase/widgets/text/big_text.dart';
 
 import '../../core/constants/image/image_constants.dart';
 import '../login/widgets/login_button.dart';
-import '../login/widgets/signup_image.dart';
+import 'widgets/home_top_image.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key, required this.email});
@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SignUpImage(
+            HomeTopImage(
               ImageConstants.instance.saitama,
               h: h,
               w: w,
