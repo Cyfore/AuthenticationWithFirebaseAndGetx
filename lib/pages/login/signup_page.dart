@@ -31,7 +31,8 @@ class SignUpPage extends StatelessWidget {
               ImageConstants.instance.deadPlanetSpecular,
               h: h,
               w: w,
-              text: 'Sign Up', authOnTap: AuthController.instance.signUp,
+              text: 'Sign Up',
+              authOnTap: AuthController.instance.signUp,
             ),
             const SizedBox(height: 70),
             const SmallText(
@@ -39,14 +40,17 @@ class SignUpPage extends StatelessWidget {
             ),
             Wrap(
               children: List<Widget>.generate(3, (index) {
-                return Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: CircleAvatar(
-                    radius: 33,
-                    backgroundColor: Colors.grey[400],
+                return GestureDetector(
+                  onTap: AuthController.instance.signInWithGoogle,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
                     child: CircleAvatar(
-                      radius: 27,
-                      backgroundImage: AssetImage(ImageList.images[index]),
+                      radius: 33,
+                      backgroundColor: Colors.grey[400],
+                      child: CircleAvatar(
+                        radius: 27,
+                        backgroundImage: AssetImage(ImageList.images[index]),
+                      ),
                     ),
                   ),
                 );

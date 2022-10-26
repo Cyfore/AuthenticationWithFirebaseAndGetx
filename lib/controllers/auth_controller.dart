@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:login_app_with_firebase/pages/home/home_page.dart';
 import 'package:login_app_with_firebase/pages/login/login_page.dart';
 
@@ -14,7 +16,6 @@ class AuthController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-
   @override
   void onReady() {
     super.onReady();
@@ -43,6 +44,28 @@ class AuthController extends GetxController {
       Get.offAll(() => const LoginPage());
     } else {
       Get.offAll(() => HomePage(email: user.email!));
+    }
+  }
+
+  void signInWithGoogle() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    try {
+      googleSignIn.disconnect();
+    } catch (e) {}
+    try {
+      final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleAuth = await googleSignInAccount.authentication;
+        final crendentials = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        await auth.signInWithCredential(crendentials);
+      }
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    } on PlatformException catch (e) {
+      print(e);
     }
   }
 
