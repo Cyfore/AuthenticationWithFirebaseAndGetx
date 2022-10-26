@@ -16,6 +16,7 @@ class AuthController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+
   @override
   void onReady() {
     super.onReady();
@@ -72,6 +73,7 @@ class AuthController extends GetxController {
   void signIn() async {
     try {
       await auth.signInWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
+      _controllerclear();
     } catch (value) {
       debugPrint(value.toString());
       Get.snackbar(
@@ -94,6 +96,7 @@ class AuthController extends GetxController {
   void signUp() async {
     try {
       await auth.createUserWithEmailAndPassword(email: email.text.trim(), password: password.text.trim());
+      _controllerclear();
     } catch (value) {
       debugPrint(value.toString());
       Get.snackbar(
@@ -113,6 +116,11 @@ class AuthController extends GetxController {
 
   void signOut() async {
     await auth.signOut();
+  }
+
+  _controllerclear() {
+    email.clear();
+    password.clear();
   }
 
   @override
